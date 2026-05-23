@@ -47,3 +47,12 @@ set -U FZY_TAB_SHOW_SCORES 1
 - `z`, `zi`, and `zoxide` commands are skipped automatically, falling back to Fish default completion
 - Single candidates are inserted directly without launching fzy
 - No trailing space after directories; space is auto-inserted for non-directories
+
+Sometimes fzy-tab keybinding will not work, you can override `fish_user_key_bindings` function:
+
+```fish
+# ~/.config/fish/functions/fish_user_key_bindings.fish
+function fish_user_key_bindings
+    bind \t _fzy_tab_complete
+end
+```
